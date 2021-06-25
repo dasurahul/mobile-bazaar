@@ -108,11 +108,6 @@ const Navbar = () => {
         </ListItem>
       </List>
       <Icons>
-        <IconContainer onClick={() => history.push("/cart")}>
-          <Badge badgeContent={1} color="primary">
-            <ShoppingCartIcon />
-          </Badge>
-        </IconContainer>
         {authContext.loggedIn && (
           <IconContainer onClick={() => history.push("/profile")}>
             <Avatar
@@ -126,6 +121,11 @@ const Navbar = () => {
             <AccountCircleIcon />
           </IconContainer>
         )}
+        <IconContainer onClick={() => history.push("/cart")}>
+          <Badge badgeContent={1} color="primary">
+            <ShoppingCartIcon />
+          </Badge>
+        </IconContainer>
       </Icons>
       <MenuIconContainer onClick={openMenu}>
         <MenuIcon />
