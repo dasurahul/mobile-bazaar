@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
+import Avatar from "@material-ui/core/Avatar";
 import { Link, useHistory } from "react-router-dom";
+import { signIn } from "../firebase";
+import AuthContext from "../store/auth-context";
 
 import styled from "styled-components";
 
@@ -40,6 +43,7 @@ const MyLink = styled(Link)`
 
 const Icons = styled.div`
   display: flex;
+  align-items: center;
   gap: 15px;
   @media (max-width: 600px) {
     display: none;
@@ -75,6 +79,7 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
+  const authContext = useContext(AuthContext);
   const history = useHistory();
   const [open, setOpen] = useState(false);
   const openMenu = () => {
@@ -83,6 +88,11 @@ const Navbar = () => {
   const closeMenu = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    authContext.signInResult();
+  }, [authContext]);
+
   return (
     <Container>
       <Logo onClick={() => history.push("/")}>Mobile Bazaar</Logo>
@@ -103,9 +113,19 @@ const Navbar = () => {
             <ShoppingCartIcon />
           </Badge>
         </IconContainer>
-        <IconContainer onClick={() => history.push("/profile")}>
-          <AccountCircleIcon />
-        </IconContainer>
+        {authContext.loggedIn && (
+          <IconContainer onClick={() => history.push("/profile")}>
+            <Avatar
+              src={authContext.picture}
+              style={{ width: "35px", height: "35px" }}
+            ></Avatar>
+          </IconContainer>
+        )}
+        {!authContext.loggedIn && (
+          <IconContainer onClick={signIn}>
+            <AccountCircleIcon />
+          </IconContainer>
+        )}
       </Icons>
       <MenuIconContainer onClick={openMenu}>
         <MenuIcon />
