@@ -67,7 +67,7 @@ const Menu = styled.div`
   z-index: 1;
   background-color: #fff;
   transform: ${(props) => (props.open ? "translate(0)" : "translate(100%)")};
-  transition: all 200ms;
+  transition: transform 200ms;
 `;
 
 const MenuItem = styled.div`

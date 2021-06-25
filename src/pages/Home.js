@@ -58,6 +58,20 @@ const laptopData = [
     price: 62990,
     details: "8 GB DDR4 RAM",
   },
+  {
+    id: 9,
+    img: "https://rukminim1.flixcart.com/image/312/312/kex5ci80/computer/f/n/k/dell-na-gaming-laptop-original-imafvhkmrntmrfqz.jpeg?q=70",
+    name: "DELL G5 15 SE Ryzen 7 Octa Core 4800H - (8 GB/512 GB SSD/Windows 10 Home/6 GB Graphics/AMD Radeon RX 5600M/120 Hz) G5 5505 Gaming Laptop  (15.6 inch, Silver, 2.5 kg)",
+    price: 87990,
+    details: "8 GB DDR4 RAM",
+  },
+  {
+    id: 10,
+    img: "https://rukminim1.flixcart.com/image/312/312/kpsnzww0/computer/h/r/l/dell-gaming-g5-5500-gaming-laptop-dell-original-imag3y4wycuk4tnn.jpeg?q=70",
+    name: "DELL GAMING G5 SERIES Core i5 10th Gen - (8 GB/512 GB SSD/Windows 10/4 GB Graphics/NVIDIA GeForce GTX 1650Ti/120 Hz) G5 5500 Gaming Laptop  (15.6 inch, Black, 2.3 kg, With MS Office)",
+    price: 79990,
+    details: "8 GB DDR4 RAM",
+  },
 ];
 
 const phoneData = [
@@ -117,18 +131,32 @@ const phoneData = [
     price: 10999,
     details: "6000 mAh Lithium-ion Battery",
   },
+  {
+    id: 9,
+    img: "https://rukminim1.flixcart.com/image/312/312/kb1470w0/mobile/6/r/s/oppo-a12-cph2083-original-imafsh2hvz4f2sa5.jpeg?q=70",
+    name: "OPPO A12 (Black, 32 GB)  (3 GB RAM)",
+    price: 7990,
+    details: "4230 mAh Battery",
+  },
+  {
+    id: 10,
+    img: "https://rukminim1.flixcart.com/image/312/312/kpbipow0/mobile/c/x/1/f19-cph2219-oppo-original-imag3kvkwxhhxjha.jpeg?q=70",
+    name: "OPPO F19 (Space Silver, 128 GB)  (6 GB RAM)",
+    price: 17990,
+    details: "5000 mAh Battery",
+  },
 ];
 
 const Home = () => {
   return (
     <React.Fragment>
       <Items
-        data={phoneData}
+        data={phoneData.slice(0, 8)}
         title="Best Battery Phones"
         subTitle="More than 4000 mAh"
       />
       <Items
-        data={laptopData}
+        data={laptopData.slice(0, 8)}
         title="Best RAM Laptops"
         subTitle="More than 4GB RAM"
       />

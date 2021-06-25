@@ -32,7 +32,7 @@ const Body = styled.div`
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   @media (max-width: 600px) {
     justify-content: center;
     gap: 0px;
@@ -48,7 +48,7 @@ const Item = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 600px) {
-    border: 1px solid #ccc;
+    border: 1px solid #eee;
   }
 `;
 const Image = styled.img`
