@@ -4,7 +4,9 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
-import Avatar from "@material-ui/core/Avatar";
+import HomeIcon from "@material-ui/icons/Home";
+import DevicesOtherIcon from "@material-ui/icons/DevicesOther";
+import InfoIcon from "@material-ui/icons/Info";
 import { Link, useHistory } from "react-router-dom";
 import { signIn } from "../firebase";
 import AuthContext from "../store/auth-context";
@@ -67,7 +69,7 @@ const Menu = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  width: 300px;
+  width: 250px;
   z-index: 1;
   background-color: #fff;
   transform: ${(props) => (props.open ? "translate(0)" : "translate(100%)")};
@@ -76,6 +78,13 @@ const Menu = styled.div`
 
 const MenuItem = styled.div`
   margin: 15px 0;
+`;
+
+const MyIconContainer = styled(IconContainer)`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 500;
 `;
 
 const Navbar = () => {
@@ -110,10 +119,7 @@ const Navbar = () => {
       <Icons>
         {authContext.loggedIn && (
           <IconContainer onClick={() => history.push("/profile")}>
-            <Avatar
-              src={authContext.picture}
-              style={{ width: "35px", height: "35px" }}
-            ></Avatar>
+            <AccountCircleIcon />
           </IconContainer>
         )}
         {!authContext.loggedIn && (
@@ -138,19 +144,42 @@ const Navbar = () => {
           <CloseIcon />
         </IconContainer>
         <MenuItem>
-          <MyLink to="/">Home</MyLink>
+          <MyIconContainer onClick={() => history.push("/")}>
+            <HomeIcon /> Home
+          </MyIconContainer>
         </MenuItem>
         <MenuItem>
-          <MyLink to="/products">Products</MyLink>
+          <MyIconContainer onClick={() => history.push("/products")}>
+            <DevicesOtherIcon /> Products
+          </MyIconContainer>
         </MenuItem>
         <MenuItem>
-          <MyLink to="/about">About</MyLink>
+          <MyIconContainer onClick={() => history.push("/about")}>
+            <InfoIcon /> About
+          </MyIconContainer>
         </MenuItem>
+
+        {authContext.loggedIn && (
+          <MenuItem>
+            <MyIconContainer onClick={() => history.push("/profile")}>
+              <AccountCircleIcon /> Profile
+            </MyIconContainer>
+          </MenuItem>
+        )}
+        {!authContext.loggedIn && (
+          <MenuItem>
+            <MyIconContainer onClick={signIn}>
+              <AccountCircleIcon /> Profile
+            </MyIconContainer>
+          </MenuItem>
+        )}
         <MenuItem>
-          <MyLink to="/cart">Cart</MyLink>
-        </MenuItem>
-        <MenuItem>
-          <MyLink to="/profile">Profile</MyLink>
+          <MyIconContainer onClick={() => history.push("/cart")}>
+            <Badge badgeContent={1} color="primary">
+              <ShoppingCartIcon />
+            </Badge>{" "}
+            Cart
+          </MyIconContainer>
         </MenuItem>
       </Menu>
     </Container>
