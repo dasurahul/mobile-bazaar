@@ -31,12 +31,13 @@ const Underline = styled.div`
 const Body = styled.div`
   padding: 20px;
   display: flex;
-  flex-wrap: wrap;
   gap: 30px;
-  @media (max-width: 600px) {
-    justify-content: center;
-    gap: 0px;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
   }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 
 const Item = styled.div`
@@ -47,9 +48,6 @@ const Item = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 600px) {
-    border: 1px solid #eee;
-  }
 `;
 const Image = styled.img`
   width: 70px;
