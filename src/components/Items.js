@@ -41,7 +41,7 @@ const Body = styled.div`
 `;
 
 const Item = styled.div`
-  width: 150px;
+  min-width: 150px;
   padding: 10px;
   text-align: center;
   display: flex;

@@ -77,7 +77,7 @@ const Menu = styled.div`
 `;
 
 const MenuItem = styled.div`
-  margin: 15px 0;
+  margin: 25px 0;
 `;
 
 const MyIconContainer = styled(IconContainer)`
