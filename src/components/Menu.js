@@ -13,6 +13,17 @@ import ReactDOM from "react-dom";
 
 import styled from "styled-components";
 
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transform: ${(props) => (props.open ? "translate(0)" : "translate(100%)")};
+`;
+
 const MyMenu = styled.div`
   padding: 20px 0;
   position: fixed;
@@ -35,14 +46,6 @@ const MenuItem = styled.div`
   }
 `;
 
-const MyIconContainer = styled(IconContainer)`
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-weight: 500;
-`;
-
 const MyNavLink = styled(NavLink)`
   text-decoration: none;
   padding: 20px;
@@ -53,21 +56,19 @@ const MyNavLink = styled(NavLink)`
   font-weight: 500;
 `;
 
-const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  transform: ${(props) => (props.open ? "translate(0)" : "translate(100%)")};
+const MyIconContainer = styled(IconContainer)`
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 500;
 `;
 
 const Menu = (props) => {
   const authContext = useContext(AuthContext);
   return ReactDOM.createPortal(
-    <Overlay open={props.open} onClick={props.closeMenu}>
+    <React.Fragment>
+      <Overlay open={props.open} onClick={props.closeMenu}></Overlay>
       <MyMenu open={props.open}>
         <IconContainer
           style={{
@@ -118,7 +119,7 @@ const Menu = (props) => {
           </MyNavLink>
         </MenuItem>
       </MyMenu>
-    </Overlay>,
+    </React.Fragment>,
     document.getElementById("portal")
   );
 };

@@ -64,6 +64,7 @@ const Navbar = () => {
   const authContext = useContext(AuthContext);
   const history = useHistory();
   const [open, setOpen] = useState(false);
+
   const openMenu = () => {
     setOpen(true);
   };
