@@ -105,9 +105,9 @@ const phoneData = [
   },
   {
     id: 5,
-    img: "https://rukminim1.flixcart.com/image/150/150/kcauaa80/mobile/2/p/u/poco-m2-pro-mzb9621in-original-imaftg9fkdpgbgxq.jpeg?q=70",
-    name: "OPPO Reno3 Pro (Sky White, 128 GB)  (8 GB RAM)",
-    price: 29990,
+    img: "https://rukminim1.flixcart.com/image/312/312/k79dd3k0/mobile/z/p/h/oppo-reno3-pro-cph2035-original-imafpj4fgfrzskf3.jpeg?q=70",
+    name: "OPPO Reno3 Pro (Auroral Blue, 128 GB)  (8 GB RAM)",
+    price: 27990,
     details: "4025 mAh Battery",
   },
   {
