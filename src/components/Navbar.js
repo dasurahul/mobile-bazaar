@@ -7,7 +7,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import HomeIcon from "@material-ui/icons/Home";
 import DevicesOtherIcon from "@material-ui/icons/DevicesOther";
 import InfoIcon from "@material-ui/icons/Info";
-import { Link, useHistory } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { signIn } from "../firebase";
 import AuthContext from "../store/auth-context";
 
@@ -64,7 +64,7 @@ const MenuIconContainer = styled(IconContainer)`
 `;
 
 const Menu = styled.div`
-  padding: 20px;
+  padding: 20px 0;
   position: fixed;
   top: 0;
   right: 0;
@@ -77,10 +77,23 @@ const Menu = styled.div`
 `;
 
 const MenuItem = styled.div`
-  margin: 25px 0;
+  &:hover {
+    background-color: #eee;
+  }
 `;
 
 const MyIconContainer = styled(IconContainer)`
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 500;
+`;
+
+const MyNavLink = styled(NavLink)`
+  text-decoration: none;
+  padding: 20px;
+  color: #222;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -138,32 +151,36 @@ const Navbar = () => {
       </MenuIconContainer>
       <Menu open={open}>
         <IconContainer
-          style={{ display: "flex", justifyContent: "flex-end" }}
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            marginRight: "20px",
+            marginBottom: "20px",
+          }}
           onClick={closeMenu}
         >
           <CloseIcon />
         </IconContainer>
         <MenuItem>
-          <MyIconContainer onClick={() => history.push("/")}>
+          <MyNavLink exact to="/" activeStyle={{ backgroundColor: "#ddd" }}>
             <HomeIcon /> Home
-          </MyIconContainer>
+          </MyNavLink>
         </MenuItem>
         <MenuItem>
-          <MyIconContainer onClick={() => history.push("/products")}>
+          <MyNavLink to="/products" activeStyle={{ backgroundColor: "#ddd" }}>
             <DevicesOtherIcon /> Products
-          </MyIconContainer>
+          </MyNavLink>
         </MenuItem>
         <MenuItem>
-          <MyIconContainer onClick={() => history.push("/about")}>
+          <MyNavLink to="/about" activeStyle={{ backgroundColor: "#ddd" }}>
             <InfoIcon /> About
-          </MyIconContainer>
+          </MyNavLink>
         </MenuItem>
-
         {authContext.loggedIn && (
           <MenuItem>
-            <MyIconContainer onClick={() => history.push("/profile")}>
+            <MyNavLink to="/profile" activeStyle={{ backgroundColor: "#ddd" }}>
               <AccountCircleIcon /> Profile
-            </MyIconContainer>
+            </MyNavLink>
           </MenuItem>
         )}
         {!authContext.loggedIn && (
@@ -174,12 +191,12 @@ const Navbar = () => {
           </MenuItem>
         )}
         <MenuItem>
-          <MyIconContainer onClick={() => history.push("/cart")}>
+          <MyNavLink to="/cart" activeStyle={{ backgroundColor: "#ddd" }}>
             <Badge badgeContent={1} color="primary">
               <ShoppingCartIcon />
             </Badge>{" "}
             Cart
-          </MyIconContainer>
+          </MyNavLink>
         </MenuItem>
       </Menu>
     </Container>
