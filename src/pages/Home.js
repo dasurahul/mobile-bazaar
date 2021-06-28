@@ -74,6 +74,79 @@ const laptopData = [
   },
 ];
 
+const televisionData = [
+  {
+    id: 1,
+    img: "https://rukminim1.flixcart.com/image/312/312/ko0d6kw0/television/r/b/m/kd-50x74-sony-original-imag2jyupyqmcctu.jpeg?q=70",
+    name: "SONY X74 Bravia 125.7 cms (50 inch) Ultra HD (4K) LED Smart Android TV  (KD-50X74)",
+    price: 70999,
+    details: "Operating System: Android",
+  },
+  {
+    id: 2,
+    img: "https://rukminim1.flixcart.com/image/312/312/kq6yefk0/television/s/c/z/l43m4-4ain-mi-original-imag496eqghnqhpu.jpeg?q=70",
+    name: "Mi 4X 108 cm (43 inch) Ultra HD (4K) LED Smart Android TV",
+    price: 28999,
+    details: "Operating System: Android",
+  },
+  {
+    id: 3,
+    img: "https://rukminim1.flixcart.com/image/312/312/kosxzm80/television/a/7/8/rmv2004-realme-original-imag36hwea8zmnvy.jpeg?q=70",
+    name: "realme 108 cm (43 inch) Ultra HD (4K) LED Smart Android TV with Handsfree Voice Search and Dolby Vision & Atmos  (RMV2004)",
+    price: 28999,
+    details: "Operating System: Android",
+  },
+  {
+    id: 4,
+    img: "https://rukminim1.flixcart.com/image/312/312/kpmy8i80/television/q/u/v/u-series-50-u1s-50uc1a00-oneplus-original-imag3tpydevtfnd9.jpeg?q=70",
+    name: "OnePlus U1S 126 cm (50 inch) Ultra HD (4K) LED Smart Android TV  (50UC1A00)",
+    price: 39999,
+    details: "Operating System: Android",
+  },
+  {
+    id: 5,
+    img: "https://rukminim1.flixcart.com/image/312/312/kingqkw0/television/w/b/y/motorola-43sauhdmq-original-imafydykpnw3hzgv.jpeg?q=70",
+    name: "MOTOROLA ZX Pro 127 cm (50 inch) Ultra HD (4K) LED Smart Android TV with Wireless Gamepad  (50SAUHDMQ)",
+    price: 38999,
+    details: "Operating System: Android",
+  },
+  {
+    id: 6,
+    img: "https://rukminim1.flixcart.com/image/312/312/kc54ivk0/television/y/c/u/mi-l50m5-5ain-original-imaftc5fzuhfdvzm.jpeg?q=70",
+    name: "Mi 4X 125.7 cm (50 inch) Ultra HD (4K) LED Smart Android TV",
+    price: 34999,
+    details: "Operating System: Android",
+  },
+  {
+    id: 7,
+    img: "https://rukminim1.flixcart.com/image/312/312/kkoc70w0/television/o/x/j/l55m6-eqg-mi-original-imafzyrjdtba6bqf.jpeg?q=70",
+    name: "Mi Q1 138.8 cm (55 inch) QLED Ultra HD (4K) Smart Android TV",
+    price: 57999,
+    details: "Operating System: Android",
+  },
+  {
+    id: 8,
+    img: "https://rukminim1.flixcart.com/image/312/312/kfzq8i80/television/c/s/h/motorola-43sauhdmg-original-imafwc56xph9zduu.jpeg?q=70",
+    name: "MOTOROLA Revou 108 cm (43 inch) Ultra HD (4K) LED Smart Android TV with Dolby Atmos and Dolby Vision  (43SAUHDMG)",
+    price: 31999,
+    details: "Operating System: Android",
+  },
+  {
+    id: 9,
+    img: "https://rukminim1.flixcart.com/image/312/312/kfwvcsw0/television/g/4/u/nokia-50tauhdn-original-imafw8xggpjge2hk.jpeg?q=70",
+    name: "Nokia 126 cm (50 inch) Ultra HD (4K) LED Smart Android TV with Sound by Onkyo  (50TAUHDN)",
+    price: 37999,
+    details: "Operating System: Android",
+  },
+  {
+    id: 10,
+    img: "https://rukminim1.flixcart.com/image/312/312/keuagsw0/television/y/e/y/panasonic-th-50hx450dx-th-50hx450dx-original-imafvf3sbzgzygu2.jpeg?q=70",
+    name: "Panasonic 127 cm (50 inch) Ultra HD (4K) LED Smart Android TV  (TH-50HX450DX)",
+    price: 37999,
+    details: "Operating System: Android",
+  },
+];
+
 const phoneData = [
   {
     id: 1,
@@ -159,6 +232,11 @@ const Home = () => {
         data={laptopData.slice(0, 8)}
         title="Best RAM Laptops"
         subTitle="More than 4GB RAM"
+      />
+      <Items
+        data={televisionData.slice(0, 8)}
+        title="Best Android TVs"
+        subTitle="One Year Warranty"
       />
     </React.Fragment>
   );
