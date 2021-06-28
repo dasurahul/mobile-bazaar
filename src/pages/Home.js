@@ -1,7 +1,8 @@
 import React from "react";
 import Items from "../components/Items";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Carousel from "react-bootstrap/Carousel";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 const carouselData = [
   {
@@ -258,12 +259,12 @@ const phoneData = [
 const Home = () => {
   return (
     <React.Fragment>
-      <Carousel interval={3000} prevLabel={null} nextLabel={null}>
+      <Carousel showArrows={false} showThumbs={false}>
         {carouselData.map((data) => {
           return (
-            <Carousel.Item key={data.id}>
-              <img src={data.img} alt={data.name} style={{ width: "100%" }} />
-            </Carousel.Item>
+            <div key={data.id}>
+              <img src={data.img} alt={data.name} />
+            </div>
           );
         })}
       </Carousel>
