@@ -262,7 +262,7 @@ const Home = () => {
         {carouselData.map((data) => {
           return (
             <Carousel.Item key={data.id}>
-              <img src={data.img} alt={data.name} />
+              <img src={data.img} alt={data.name} style={{ width: "100%" }} />
             </Carousel.Item>
           );
         })}
