@@ -259,7 +259,12 @@ const phoneData = [
 const Home = () => {
   return (
     <React.Fragment>
-      <Carousel showArrows={false} showThumbs={false}>
+      <Carousel
+        showArrows={false}
+        showThumbs={false}
+        showStatus={false}
+        showIndicators={false}
+      >
         {carouselData.map((data) => {
           return (
             <div key={data.id}>
