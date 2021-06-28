@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "material-ui-image";
 import Button from "@material-ui/core/Button";
 
 import styled from "styled-components";
@@ -49,15 +50,12 @@ const Item = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const Image = styled.img`
+
+const ImageContainer = styled.div`
   width: 70px;
   height: 70px;
-  object-fit: contain;
-  transition: transform 200ms;
-  &:hover {
-    transform: scale(1.05);
-  }
 `;
+
 const Name = styled.div`
   font-size: 13px;
   font-weight: 500;
@@ -89,7 +87,14 @@ const Items = ({ data, title, subTitle }) => {
       <Body>
         {data.map((item) => (
           <Item key={item.id}>
-            <Image src={item.img} alt={item.name} />
+            <ImageContainer>
+              <Image
+                src={item.img}
+                alt={item.name}
+                style={{ objectFit: "contain" }}
+                disableSpinner
+              />
+            </ImageContainer>
             <Name>
               {item.name.length > 20
                 ? item.name.substring(0, 20).concat("...")

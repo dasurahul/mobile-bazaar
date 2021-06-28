@@ -14,7 +14,7 @@ const Container = styled.div`
 const Footer = () => {
   return (
     <Container>
-      <h5 style={{ fontWeight: "300" }}>
+      <h5 style={{ fontWeight: "400" }}>
         &copy; 2021 Mobile Bazaar All rights reserved
       </h5>
     </Container>
