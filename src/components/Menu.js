@@ -3,8 +3,8 @@ import CloseIcon from "@material-ui/icons/Close";
 import HomeIcon from "@material-ui/icons/Home";
 import DevicesOtherIcon from "@material-ui/icons/DevicesOther";
 import InfoIcon from "@material-ui/icons/Info";
-import Badge from "@material-ui/core/Badge";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { NavLink } from "react-router-dom";
 import { signIn } from "../firebase";
@@ -36,6 +36,7 @@ const MyMenu = styled.div`
   transform: ${(props) => (props.open ? "translate(0)" : "translate(100%)")};
   transition: transform 200ms;
 `;
+
 const IconContainer = styled.div`
   cursor: pointer;
 `;

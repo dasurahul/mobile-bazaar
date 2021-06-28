@@ -7,6 +7,7 @@ import { Link, useHistory } from "react-router-dom";
 import { signIn } from "../firebase";
 import AuthContext from "../store/auth-context";
 import Menu from "./Menu";
+import disableScroll from "disable-scroll";
 
 import styled from "styled-components";
 
@@ -67,9 +68,11 @@ const Navbar = () => {
 
   const openMenu = () => {
     setOpen(true);
+    disableScroll.on();
   };
   const closeMenu = () => {
     setOpen(false);
+    disableScroll.off();
   };
 
   useEffect(() => {
