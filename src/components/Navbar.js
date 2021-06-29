@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Link, useHistory } from "react-router-dom";
-import { signIn } from "../firebase";
 import AuthContext from "../store/auth-context";
 import Menu from "./Menu";
 import disableScroll from "disable-scroll";
@@ -75,10 +74,6 @@ const Navbar = () => {
     disableScroll.off();
   };
 
-  useEffect(() => {
-    authContext.signInResult();
-  }, [authContext]);
-
   return (
     <Container>
       <Logo onClick={() => history.push("/")}>Mobile Bazaar</Logo>
@@ -100,7 +95,7 @@ const Navbar = () => {
           </IconContainer>
         )}
         {!authContext.loggedIn && (
-          <IconContainer onClick={signIn}>
+          <IconContainer onClick={() => history.push("/signup")}>
             <AccountCircleIcon />
           </IconContainer>
         )}

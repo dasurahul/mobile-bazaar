@@ -5,6 +5,8 @@ import Products from "./pages/Products";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 import Footer from "./components/Footer";
 import { Route } from "react-router-dom";
 
@@ -26,6 +28,12 @@ const App = () => {
       </Route>
       <Route path="/profile">
         <Profile />
+      </Route>
+      <Route path="/signup">
+        <Signup />
+      </Route>
+      <Route path="/login">
+        <Login />
       </Route>
       <Footer />
     </div>

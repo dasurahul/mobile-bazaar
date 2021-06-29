@@ -7,7 +7,6 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { NavLink } from "react-router-dom";
-import { signIn } from "../firebase";
 import AuthContext from "../store/auth-context";
 import ReactDOM from "react-dom";
 
@@ -57,14 +56,6 @@ const MyNavLink = styled(NavLink)`
   font-weight: 500;
 `;
 
-const MyIconContainer = styled(IconContainer)`
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-weight: 500;
-`;
-
 const Menu = (props) => {
   const authContext = useContext(AuthContext);
   return ReactDOM.createPortal(
@@ -78,9 +69,8 @@ const Menu = (props) => {
             marginRight: "20px",
             marginBottom: "20px",
           }}
-          onClick={props.closeMenu}
         >
-          <CloseIcon />
+          <CloseIcon onClick={props.closeMenu} />
         </IconContainer>
         <MenuItem>
           <MyNavLink exact to="/" activeStyle={{ backgroundColor: "#ddd" }}>
@@ -106,9 +96,9 @@ const Menu = (props) => {
         )}
         {!authContext.loggedIn && (
           <MenuItem>
-            <MyIconContainer onClick={signIn}>
-              <AccountCircleIcon /> Profile
-            </MyIconContainer>
+            <MyNavLink to="/signup" activeStyle={{ backgroundColor: "#ddd" }}>
+              <AccountCircleIcon /> Login
+            </MyNavLink>
           </MenuItem>
         )}
         <MenuItem>
