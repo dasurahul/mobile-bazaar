@@ -90,19 +90,31 @@ const Navbar = () => {
       </List>
       <Icons>
         {authContext.loggedIn && (
-          <IconContainer onClick={() => history.push("/profile")}>
+          <IconContainer
+            onClick={() => history.push("/profile")}
+            style={{ display: "flex", alignItems: "center", gap: "2px" }}
+          >
             <AccountCircleIcon />
+            <span style={{ fontWeight: "500" }}>Profile</span>
           </IconContainer>
         )}
         {!authContext.loggedIn && (
-          <IconContainer onClick={() => history.push("/signup")}>
+          <IconContainer
+            onClick={() => history.push("/login")}
+            style={{ display: "flex", alignItems: "center", gap: "2px" }}
+          >
             <AccountCircleIcon />
+            <span style={{ fontWeight: "500" }}>Login</span>
           </IconContainer>
         )}
-        <IconContainer onClick={() => history.push("/cart")}>
+        <IconContainer
+          onClick={() => history.push("/cart")}
+          style={{ display: "flex", alignItems: "center", gap: "2px" }}
+        >
           <Badge badgeContent={1} color="primary">
             <ShoppingCartIcon />
-          </Badge>
+          </Badge>{" "}
+          <span style={{ fontWeight: "500" }}>Cart</span>
         </IconContainer>
       </Icons>
       <MenuIconContainer onClick={openMenu}>
