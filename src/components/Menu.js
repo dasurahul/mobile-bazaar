@@ -96,7 +96,7 @@ const Menu = (props) => {
         )}
         {!authContext.loggedIn && (
           <MenuItem>
-            <MyNavLink to="/signup" activeStyle={{ backgroundColor: "#ddd" }}>
+            <MyNavLink to="/login" activeStyle={{ backgroundColor: "#ddd" }}>
               <AccountCircleIcon /> Login
             </MyNavLink>
           </MenuItem>
