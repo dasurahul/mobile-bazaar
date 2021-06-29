@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "material-ui-image";
 import Button from "@material-ui/core/Button";
+import { useHistory } from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -49,6 +50,7 @@ const Item = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 `;
 
 const ImageContainer = styled.div`
@@ -72,6 +74,7 @@ const Price = styled.div`
 `;
 
 const Items = ({ data, title, subTitle }) => {
+  const history = useHistory();
   return (
     <Container>
       <Head>
@@ -79,7 +82,11 @@ const Items = ({ data, title, subTitle }) => {
           <Title>{title}</Title>
           <SubTitle>{subTitle}</SubTitle>
         </div>
-        <Button variant="contained" color="primary">
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => history.push("/products")}
+        >
           View All
         </Button>
       </Head>
