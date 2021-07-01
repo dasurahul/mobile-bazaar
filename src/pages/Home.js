@@ -51,7 +51,7 @@ const Home = () => {
   const phoneData = productContent.phoneData;
   return (
     <React.Fragment>
-      <Carousel interval={3000} animation="slide" navButtonsAlwaysInvisible>
+      <Carousel interval={5000} animation="slide" navButtonsAlwaysInvisible>
         {carouselData.map((data) => {
           return (
             <ImageContainer key={data.id}>
