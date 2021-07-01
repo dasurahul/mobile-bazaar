@@ -56,6 +56,10 @@ const Item = styled.div`
 const ImageContainer = styled.div`
   width: 70px;
   height: 70px;
+  &:hover {
+    transform: scale(1.05);
+  }
+  transition: transform 300ms;
 `;
 
 const Name = styled.div`

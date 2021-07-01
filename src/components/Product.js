@@ -18,6 +18,10 @@ const ImageContainer = styled.div`
   height: 70px;
   margin: 0 auto;
   margin-bottom: 20px;
+  &:hover {
+    transform: scale(1.05);
+  }
+  transition: transform 300ms;
 `;
 
 const Name = styled.div`
