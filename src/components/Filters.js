@@ -28,6 +28,7 @@ const Filters = () => {
         style={{
           display: "flex",
           flexDirection: "column",
+          padding: "0 20px",
         }}
       >
         <Button
@@ -50,13 +51,15 @@ const Filters = () => {
       <h5 style={{ padding: "20px" }}>Price</h5>
       <Underline />
       <p style={{ padding: "20px" }}>10000Rs</p>
-      <Slider
-        marks={true}
-        min={0}
-        max={100000}
-        step={10000}
-        style={{ marginBottom: "20px" }}
-      />
+      <div style={{ padding: "0 20px" }}>
+        <Slider
+          marks={true}
+          min={0}
+          max={100000}
+          step={10000}
+          style={{ marginBottom: "20px" }}
+        />
+      </div>
       <Underline />
       <h5 style={{ padding: "20px" }}>RAM</h5>
       <Underline />
@@ -64,31 +67,36 @@ const Filters = () => {
         value="4GB"
         control={<Radio size="small" color="primary" />}
         label="4GB"
-        style={{ display: "block", marginTop: "20px" }}
+        style={{ display: "block", marginTop: "20px", padding: "0 20px" }}
       />
       <FormControlLabel
         value="8GB"
         control={<Radio size="small" color="primary" />}
         label="8GB"
-        style={{ display: "block", marginBottom: "20px" }}
+        style={{ display: "block", marginBottom: "20px", padding: "0 20px" }}
       />
       <Underline />
       <h5 style={{ padding: "20px" }}>Brand</h5>
       <Underline />
-      <TextField
-        type="text"
-        placeholder="Search"
-        fullWidth
-        style={{ margin: "20px 0" }}
-      />
-      <FormControl fullWidth style={{ marginBottom: "20px" }}>
-        <InputLabel id="select">Select Brand</InputLabel>
-        <Select label-Id="select">
-          <MenuItem>Oppo</MenuItem>
-          <MenuItem>Realme</MenuItem>
-          <MenuItem>Redmi</MenuItem>
-        </Select>
-      </FormControl>
+      <div style={{ padding: "20px" }}>
+        <TextField
+          type="text"
+          placeholder="Search"
+          fullWidth
+          style={{ margin: "20px 0" }}
+        />
+      </div>
+      <div style={{ padding: "20px", marginBottom: "20px" }}>
+        <FormControl fullWidth>
+          <InputLabel id="select">Select Brand</InputLabel>
+          <Select label-Id="select">
+            <MenuItem>Oppo</MenuItem>
+            <MenuItem>Realme</MenuItem>
+            <MenuItem>Redmi</MenuItem>
+          </Select>
+        </FormControl>
+      </div>
+
       <Underline />
     </FiltersContainer>
   );

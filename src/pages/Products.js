@@ -11,7 +11,7 @@ import styled from "styled-components";
 const Container = styled.div``;
 
 const MainContainer = styled.div`
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 9fr;
@@ -19,13 +19,14 @@ const MainContainer = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
+  gap: 10px;
 `;
 
 const ProductsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   margin-bottom: 20px;
 `;

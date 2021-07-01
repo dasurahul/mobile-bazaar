@@ -11,7 +11,10 @@ const ProductContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  &:hover {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  }
+  transition: box-shadow 300ms;
 `;
 
 const ImageContainer = styled.div`
