@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import Items from "../components/Items";
 
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "react-material-ui-carousel";
+import Image from "material-ui-image";
 
-import ProductContext from "../store/products-context";
+import styled from "styled-components";
+
+import ProductsContext from "../store/products-context";
 
 const carouselData = [
   {
@@ -39,24 +41,29 @@ const carouselData = [
   },
 ];
 
+const ImageContainer = styled.div``;
+
 const Home = () => {
-  const productContent = useContext(ProductContext);
+  const productContent = useContext(ProductsContext);
   const laptopData = productContent.laptopData;
   const televisionData = productContent.televisionData;
   const phoneData = productContent.phoneData;
   return (
     <React.Fragment>
-      <Carousel
-        showArrows={false}
-        showThumbs={false}
-        showStatus={false}
-        showIndicators={false}
-      >
+      <Carousel interval={3000} animation="slide" navButtonsAlwaysInvisible>
         {carouselData.map((data) => {
           return (
-            <div key={data.id}>
-              <img src={data.img} alt={data.name} />
-            </div>
+            <ImageContainer key={data.id}>
+              <Image
+                src={data.img}
+                alt={data.name}
+                style={{ paddingTop: "0" }}
+                imageStyle={{
+                  position: "static",
+                }}
+                disableSpinner
+              />
+            </ImageContainer>
           );
         })}
       </Carousel>
