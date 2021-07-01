@@ -5,7 +5,8 @@ import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 
 const ProductContainer = styled.div`
-  width: 250px;
+  width: 100%;
+  max-width: 350px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -39,8 +40,8 @@ const Buttons = styled.div`
 
 const Product = ({ data }) => {
   let name = data.name;
-  if (name.length > 20) {
-    name = name.slice(0, 20).concat("...");
+  if (name.length > 35) {
+    name = name.slice(0, 35).concat("...");
   }
   return (
     <ProductContainer>
