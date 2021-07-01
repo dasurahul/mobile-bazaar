@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import Items from "../components/Items";
 
 import Carousel from "react-material-ui-carousel";
 import Image from "material-ui-image";
+
+import Items from "../components/Items";
 
 import styled from "styled-components";
 
